@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  bcas:
+    image: kurukurumaware/b-cas-server
+    container_name: smartcard
+    devices:
+      - /dev/bus/usb/
+    ports:
+      - 40774:40774
+    volumes:
+      - /var/run:/var/run
