@@ -72,6 +72,8 @@ services:
       - 40774:40774
     volumes:
       - /var/run:/var/run
+    restart: 
+      always
 ```
 
 ## 動作確認環境
