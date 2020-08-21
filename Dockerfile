@@ -12,11 +12,11 @@ RUN set -eux \
 ADD https://raw.githubusercontent.com/kurukurumaware/extlibcp/master/extlibcp /usr/local/bin/extlibcp
 RUN chmod +x /usr/local/bin/extlibcp
 
-RUN echo "\
+RUN extlibcp "\
     /usr/bin/socat \
     /usr/sbin/pcscd \
     /usr/lib/pcsc/drivers/ifd-ccid.bundle/Contents/Linux/libccid.so \
-    "| extlibcp /copydir
+    " /copydir
 
 RUN cp --archive --parents --no-dereference /usr/lib/pcsc/drivers /copydir
 COPY --from=Scard-start /copydir /copydir
